@@ -7,8 +7,12 @@
         <div>
           <h3 class="text-sm font-semibold mb-2">Eye Color</h3>
           <div class="space-y-1">
-            <div v-for="color in ['brown','hazel','blue','black','green','dark']" :key="color" class="flex items-center">
-              <Checkbox v-model="filters.eyes" :value="color" />
+            <div
+              v-for="color in ['brown','hazel','blue','black','green','dark']"
+              :key="color"
+              class="flex items-center"
+            >
+              <Checkbox v-model:checked="filters.eyes" :value="color" />
               <Label class="ml-2 capitalize">{{ color }}</Label>
             </div>
           </div>
@@ -18,8 +22,12 @@
         <div>
           <h3 class="text-sm font-semibold mb-2">Hair Color</h3>
           <div class="space-y-1">
-            <div v-for="color in ['brown','black','blond','gray','bald']" :key="color" class="flex items-center">
-              <Checkbox v-model="filters.hair" :value="color" />
+            <div
+              v-for="color in ['brown','black','blond','gray','bald']"
+              :key="color"
+              class="flex items-center"
+            >
+              <Checkbox v-model:checked="filters.hair" :value="color" />
               <Label class="ml-2 capitalize">{{ color }}</Label>
             </div>
           </div>
@@ -29,8 +37,12 @@
         <div>
           <h3 class="text-sm font-semibold mb-2">Race</h3>
           <div class="space-y-1">
-            <div v-for="race in ['black','hispanic','native','white','asian']" :key="race" class="flex items-center">
-              <Checkbox v-model="filters.race" :value="race" />
+            <div
+              v-for="race in ['black','hispanic','native','white','asian']"
+              :key="race"
+              class="flex items-center"
+            >
+              <Checkbox v-model:checked="filters.race" :value="race" />
               <Label class="ml-2 capitalize">{{ race }}</Label>
             </div>
           </div>
@@ -40,8 +52,18 @@
         <div>
           <h3 class="text-sm font-semibold mb-2">Age (years)</h3>
           <div class="flex gap-2">
-            <Input type="number" v-model.number="filters.ageMin" placeholder="Min" class="w-1/2" />
-            <Input type="number" v-model.number="filters.ageMax" placeholder="Max" class="w-1/2" />
+            <Input
+              type="number"
+              v-model.number="filters.ageMin"
+              placeholder="Min"
+              class="w-1/2"
+            />
+            <Input
+              type="number"
+              v-model.number="filters.ageMax"
+              placeholder="Max"
+              class="w-1/2"
+            />
           </div>
         </div>
 
@@ -49,8 +71,18 @@
         <div>
           <h3 class="text-sm font-semibold mb-2">Height (in)</h3>
           <div class="flex gap-2">
-            <Input type="number" v-model.number="filters.heightMin" placeholder="Min" class="w-1/2" />
-            <Input type="number" v-model.number="filters.heightMax" placeholder="Max" class="w-1/2" />
+            <Input
+              type="number"
+              v-model.number="filters.heightMin"
+              placeholder="Min"
+              class="w-1/2"
+            />
+            <Input
+              type="number"
+              v-model.number="filters.heightMax"
+              placeholder="Max"
+              class="w-1/2"
+            />
           </div>
         </div>
 
@@ -58,8 +90,18 @@
         <div>
           <h3 class="text-sm font-semibold mb-2">Weight (kg)</h3>
           <div class="flex gap-2">
-            <Input type="number" v-model.number="filters.weightMin" placeholder="Min" class="w-1/2" />
-            <Input type="number" v-model.number="filters.weightMax" placeholder="Max" class="w-1/2" />
+            <Input
+              type="number"
+              v-model.number="filters.weightMin"
+              placeholder="Min"
+              class="w-1/2"
+            />
+            <Input
+              type="number"
+              v-model.number="filters.weightMax"
+              placeholder="Max"
+              class="w-1/2"
+            />
           </div>
         </div>
 
@@ -71,7 +113,9 @@
 
         <!-- Buttons -->
         <div class="flex gap-2 pt-4">
-          <Button variant="outline" class="w-1/2" @click="clearFilters">Clear</Button>
+          <Button variant="outline" class="w-1/2" @click="clearFilters">
+            Clear
+          </Button>
           <Button class="w-1/2" @click="applyFilters">Apply</Button>
         </div>
       </aside>

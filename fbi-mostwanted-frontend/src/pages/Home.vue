@@ -2,7 +2,7 @@
   <div class="min-h-screen bg-background text-foreground">
     <!-- Header -->
     <div class="flex items-center justify-between px-6 py-4 border-b">
-      <h1 class="text-2xl font-semibold tracking-tight">Dashboard</h1>
+      <h1 class="text-2xl font-semibold tracking-tight">FBI Most Wanted</h1>
       <!-- User info / future search -->
       <div class="flex items-center gap-4">
         <Avatar>
@@ -31,6 +31,9 @@
 
           <div v-else-if="error" class="text-center text-red-600 py-10">
             Failed to load data.
+          </div>
+          <div v-else-if="data.total === 0" class="text-center text-red-600 py-10">
+            No data found.
           </div>
           <div v-else class="px-4">
             <div
@@ -93,6 +96,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import AdvancedSearch from "@/components/AdvancedSearch.vue";
 import CardSkeleton from "@/components/CardSkeleton.vue";
+import { WantedFilter } from "@/models/WantedFilter";
 
-const { data, isLoading, error } = useWantedList();
+const { data, isLoading, error } = useWantedList(new WantedFilter());
 </script>
